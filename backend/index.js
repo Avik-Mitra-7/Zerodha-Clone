@@ -21,7 +21,7 @@ app.use(
       "http://localhost:3000",
       "http://localhost:3001",
       "https://zerodha-clone-rosy-xi.vercel.app",
-      "https://zerodha-clone-dashboard.vercel.app"
+      "https://zerodha-clone-dashboard.vercel.app" 
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
