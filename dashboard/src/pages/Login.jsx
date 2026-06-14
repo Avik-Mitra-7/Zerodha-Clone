@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -31,6 +29,10 @@ const Login = () => {
 
       const { success, message } = data;
       if (success) {
+        // PRO TIP: Store the session state locally to bypass cross-domain cookie blocks
+        localStorage.setItem("userLoggedIn", "true");
+        localStorage.setItem("username", email.split("@")[0]); // Clever fallback to display their name
+
         toast.success(message);
         setTimeout(() => navigate("/"), 800);
       } else {
