@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -8,7 +6,11 @@ import { ToastContainer, toast } from "react-toastify";
 const Signup = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
-  const [inputValue, setInputValue] = useState({ email: "", password: "", username: "" });
+  const [inputValue, setInputValue] = useState({
+    email: "",
+    password: "",
+    username: "",
+  });
 
   const { email, password, username } = inputValue;
 
@@ -26,9 +28,9 @@ const Signup = () => {
       const { data } = await axios.post(
         "https://zerodha-clone-9o2z.onrender.com/signup",
         { ...inputValue },
-        { withCredentials: true }
+        { withCredentials: true },
       );
-      
+
       const { success, message } = data;
       if (success) {
         toast.success(message);
@@ -47,11 +49,14 @@ const Signup = () => {
     <div className="kite-auth-page">
       <div className="auth_card">
         <div className="kite-logo">
-          <img src="https://kite.zerodha.com/static/images/kite-logo.svg" alt="Kite" />
+          <img
+            src="https://kite.zerodha.com/static/images/kite-logo.svg"
+            alt="Kite"
+          />
         </div>
-        
+
         <h2>Open a Kite Account</h2>
-        
+
         <form onSubmit={handleSubmit}>
           <div className="input-box">
             <input
@@ -89,7 +94,9 @@ const Signup = () => {
         </form>
 
         <div className="auth-footer">
-          <p>Already have an account? <Link to={"/login"}>Login</Link></p>
+          <p>
+            Already have an account? <Link to={"/login"}>Login</Link>
+          </p>
         </div>
       </div>
       <ToastContainer position="bottom-right" />
