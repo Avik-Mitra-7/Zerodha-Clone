@@ -2,9 +2,8 @@ import React from "react";
 
 function Hero() {
   
-  // Directly redirects the user to the auth/dashboard app running on port 3001
   const handleSignupClick = () => {
-    window.location.href = "http://localhost:3001/login";
+    window.location.href = "https://zerodha-clone-dashboard-mauve.vercel.app/login";
   };
 
   return (

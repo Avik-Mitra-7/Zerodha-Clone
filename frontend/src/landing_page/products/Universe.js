@@ -2,7 +2,7 @@ import React from "react";
 
 function Universe() {
   const handleSignupRedirection = () => {
-    window.location.href = "http://localhost:3001/login";
+    window.location.href = "https://zerodha-clone-dashboard-mauve.vercel.app/login";
   };
 
   return (

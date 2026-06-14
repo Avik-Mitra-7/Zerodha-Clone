@@ -1,7 +1,7 @@
 import React from "react";
 
 const AppList = () => {
-  // Data array for the Zerodha ecosystem
+  
   const ecosystem = [
     { name: "Sensibull", desc: "Options trading platform" },
     { name: "GoldenPi", desc: "Bonds and debentures" },
@@ -61,10 +61,10 @@ const AppList = () => {
                 padding: "8px 20px",
                 fontSize: "0.8rem",
                 cursor: "pointer",
-                backgroundColor: "#4285f4", // Background blue
-                color: "#fff", // Text white
-                border: "none", // Removing border for a cleaner look
-                borderRadius: "4px", // Optional: adds a slight curve
+                backgroundColor: "#4285f4", 
+                color: "#fff", 
+                border: "none", 
+                borderRadius: "4px", 
               }}
             >
               Launch

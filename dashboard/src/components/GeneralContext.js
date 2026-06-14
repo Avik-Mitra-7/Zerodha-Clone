@@ -7,7 +7,7 @@ const GeneralContext = React.createContext({
   closeBuyWindow: () => {},
   openSellWindow: (uid) => {}, 
   closeSellWindow: () => {}, 
-  username: "", // ADD THIS: Placeholder for the global username
+  username: "", 
 });
 
 export const GeneralContextProvider = (props) => {
@@ -42,7 +42,6 @@ export const GeneralContextProvider = (props) => {
         closeBuyWindow: handleCloseBuyWindow,
         openSellWindow: handleOpenSellWindow, 
         closeSellWindow: handleCloseSellWindow,
-        // [CRITICAL FIX] Share the username prop with the entire app
         username: props.username, 
       }}
     >
@@ -54,57 +53,3 @@ export const GeneralContextProvider = (props) => {
 };
 
 export default GeneralContext;
-// import React, { useState } from "react";
-// import BuyActionWindow from "./BuyActionWindow";
-// import SellActionWindow from "./SellActionWindow";
-
-// const GeneralContext = React.createContext({
-//   openBuyWindow: (uid) => {},
-//   closeBuyWindow: () => {},
-//   openSellWindow: (uid) => {}, 
-//   closeSellWindow: () => {}, 
-// });
-
-// export const GeneralContextProvider = (props) => {
-//   const [isBuyWindowOpen, setIsBuyWindowOpen] = useState(false);
-//   const [isSellWindowOpen, setIsSellWindowOpen] = useState(false);
-//   const [selectedStockUID, setSelectedStockUID] = useState("");
-
-//   const handleOpenBuyWindow = (uid) => {
-//     setIsBuyWindowOpen(true);
-//     setSelectedStockUID(uid);
-//   };
-
-//   const handleCloseBuyWindow = () => {
-//     setIsBuyWindowOpen(false);
-//     setSelectedStockUID("");
-//   };
-
-//   // --- Sell Window Handlers ---
-//   const handleOpenSellWindow = (uid) => {
-//     setIsSellWindowOpen(true);
-//     setSelectedStockUID(uid);
-//   };
-
-//   const handleCloseSellWindow = () => {
-//     setIsSellWindowOpen(false);
-//     setSelectedStockUID("");
-//   };
-
-//   return (
-//     <GeneralContext.Provider
-//       value={{
-//         openBuyWindow: handleOpenBuyWindow,
-//         closeBuyWindow: handleCloseBuyWindow,
-//         openSellWindow: handleOpenSellWindow, // Provide the new handler
-//         closeSellWindow: handleCloseSellWindow, // Provide the new handler
-//       }}
-//     >
-//       {props.children}
-//       {isBuyWindowOpen && <BuyActionWindow uid={selectedStockUID} />}
-//       {isSellWindowOpen && <SellActionWindow uid={selectedStockUID} />}
-//     </GeneralContext.Provider>
-//   );
-// };
-
-// export default GeneralContext;

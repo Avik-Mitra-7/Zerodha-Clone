@@ -10,7 +10,7 @@ const SellActionWindow = ({ uid }) => {
   const [stockQuantity, setStockQuantity] = useState(1);
   const [stockPrice, setStockPrice] = useState(0.0);
 
-  // [CRITICAL FIX] Grab the username from context to tag the order
+  
   const userEmail = generalContext.username;
 
   const handleSellClick = async () => {
@@ -26,7 +26,7 @@ const SellActionWindow = ({ uid }) => {
         qty: Number(stockQuantity),
         price: Number(stockPrice),
         mode: "SELL", // Correct mode
-        userEmail: userEmail, // [FIX] Now the backend can filter this!
+        userEmail: userEmail, 
       });
 
       toast.info(`Sold ${stockQuantity} shares of ${uid} successfully!`, {

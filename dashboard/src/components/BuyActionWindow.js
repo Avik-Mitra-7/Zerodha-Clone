@@ -9,31 +9,28 @@ const BuyActionWindow = ({ uid }) => {
   const [stockQuantity, setStockQuantity] = useState(1);
   const [stockPrice, setStockPrice] = useState(0.0);
 
-  // [GENERAL FIX] Get the logged-in user from Context dynamically
   const userEmail = generalContext.username;
 
   const handleBuyClick = async () => {
-    // Topper-Level Safety Check: Ensure a user is actually logged in
+
     if (!userEmail) {
       toast.error("User session not found. Please log in again.");
       return;
     }
 
     try {
-      // Send the order to Port 3002 with the owner's email
       await axios.post("http://localhost:3002/newOrder", {
         name: uid,
-        qty: Number(stockQuantity), // Ensure it's a number
-        price: Number(stockPrice), // Ensure it's a number
+        qty: Number(stockQuantity), 
+        price: Number(stockPrice), 
         mode: "BUY",
-        userEmail: userEmail, // This ensures Aditya only sees Aditya's trades!
+        userEmail: userEmail, 
       });
 
       toast.success(`Bought ${stockQuantity} shares of ${uid} successfully!`, {
         position: "top-right",
       });
 
-      // Close the modal after a successful trade
       generalContext.closeBuyWindow();
     } catch (err) {
       console.error("Buy Order Error:", err);

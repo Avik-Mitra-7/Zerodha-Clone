@@ -3,7 +3,7 @@ import React from "react";
 function OpenAccount() {
   const handleSignupClick = () => {
     // Redirects from landing page to dashboard login
-    window.location.href = "http://localhost:3001/login";
+    window.location.href = "https://zerodha-clone-dashboard-mauve.vercel.app/login";
   };
 
   return (

@@ -1,8 +1,6 @@
 
 import React from "react";
 import Menu from "./Menu";
-
-// Receive username as a prop from Home.jsx
 const TopBar = ({ username }) => {
   return (
     <div className="topbar-container">
@@ -19,7 +17,6 @@ const TopBar = ({ username }) => {
         </div>
       </div>
 
-      {/* Pass the username down to the Menu for the profile icon */}
       <Menu username={username} />
     </div>
   );

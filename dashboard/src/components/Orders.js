@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
 
 import axios from "axios";
-
-// Assume 'userEmail' is passed as a prop from Home.jsx
 const Orders = ({ userEmail }) => {
   const [allOrders, setAllOrders] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchOrders = async () => {
-      if (!userEmail) return; // Wait for prop
+      if (!userEmail) return; 
 
       try {
         const res = await axios.get(
@@ -19,12 +17,12 @@ const Orders = ({ userEmail }) => {
       } catch (err) {
         console.error("Fetch Error:", err);
       } finally {
-        setIsLoading(false); // ALWAYS stop loading regardless of success/fail
+        setIsLoading(false); 
       }
     };
 
     fetchOrders();
-    // Refresh every 5 seconds for a "Live" feel
+    
     const interval = setInterval(fetchOrders, 5000);
     return () => clearInterval(interval);
   }, [userEmail]);
@@ -47,13 +45,13 @@ const Orders = ({ userEmail }) => {
             height: "50vh",
             textAlign: "center",
             flexDirection: "column",
-            fontFamily: "Inter, sans-serif", // Standard professional font
+            fontFamily: "Inter, sans-serif", 
           }}
         >
           <p
             style={{
               fontSize: "18px",
-              color: "#718096", // Modern Slate Gray
+              color: "#718096", 
               marginBottom: "8px",
               fontWeight: "400",
             }}
@@ -64,7 +62,7 @@ const Orders = ({ userEmail }) => {
           <p
             style={{
               fontSize: "14px",
-              color: "#4a5568", // Darker Charcoal Slate
+              color: "#4a5568",
               fontWeight: "600",
               textTransform: "uppercase",
               letterSpacing: "1.2px",
