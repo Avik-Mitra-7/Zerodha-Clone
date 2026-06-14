@@ -11,7 +11,7 @@ const Orders = ({ userEmail }) => {
 
       try {
         const res = await axios.get(
-          `http://localhost:3002/allOrders?email=${userEmail}`,
+          `https://zerodha-clone-9o2z.onrender.com/allOrders?email=${userEmail}`,
         );
         setAllOrders(res.data);
       } catch (err) {
