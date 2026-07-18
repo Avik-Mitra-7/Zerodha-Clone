@@ -221,6 +221,7 @@ The dashboard is built specifically for desktop and laptop screens and isn't res
 
 **Avik Mitra**
 GitHub: https://github.com/Avik-Mitra-7
+
 LinkedIn: https://www.linkedin.com/in/avik-mitra-74b965370/
 
 ---
