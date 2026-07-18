@@ -11,6 +11,7 @@ I built this to get hands-on with RESTful API design, MongoDB integration, authe
 ## Live Demo
 
 **Landing Website:** https://zerodha-clone-rosy-xi.vercel.app/
+
 **Trading Dashboard:** https://zerodha-clone-dashboard-mauve.vercel.app/login
 
 *(Note: these URLs still reflect an earlier project name and will be updated to match the new branding soon.)*
